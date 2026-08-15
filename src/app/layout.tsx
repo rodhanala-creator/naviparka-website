@@ -1,0 +1,3 @@
+import type { Metadata } from "next";import "./globals.css";import {Header,Footer} from "@/components/site";import {CookieConsent} from "@/components/interactive";
+export const metadata:Metadata={title:{default:"NaviParka — AI Parking Assistant for UK Drivers",template:"%s | NaviParka"},description:"NaviParka helps UK drivers understand parking signs, road markings and restrictions using AI-assisted parking guidance."};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><Header/><main>{children}</main><Footer/><CookieConsent/></body></html>}

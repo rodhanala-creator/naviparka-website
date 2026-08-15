@@ -1,0 +1,1 @@
+export default function Page(){return <section className="pagehero"><div className="container" style={{maxWidth:700,textAlign:'center'}}><h1 className="h1" style={{fontSize:58}}>You’re offline.</h1><p className="lead" style={{margin:'auto'}}>Reconnect to continue browsing NaviParka.</p><button className="btn btn-primary" style={{marginTop:30}}>Try again</button></div></section>}
