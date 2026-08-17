@@ -55,3 +55,7 @@ The polished phone components currently stand in for real app screenshots. Searc
 ## Note
 
 This environment was unable to complete `npm install`, so the final `next build` validation still needs to be run in a networked local or deployment environment before production release.
+
+
+## Stage 8 visual reset
+This package contains the product-page redesign with no blue blob/orbit backgrounds and the new editorial homepage structure.
