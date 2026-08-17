@@ -1,3 +1,11 @@
-import {PageHero,PhoneMockup,MapMockup} from "@/components/site";import Link from "next/link";import {ArrowRight} from "lucide-react";
-const cards=[{title:"Nearby options",body:"Explore parking locations around you and move between map context and detailed parking information."},{title:"Restriction context",body:"Surface useful status and restriction information alongside location."},{title:"Best verified option",body:"Highlight a recommended choice when enough information is available to make that recommendation responsibly."},{title:"Scan + map connection",body:"Move from analysing a restriction to understanding nearby alternatives."}];
-export default function Page(){return <><PageHero eyebrow="Parking Map" title="Parking information, in context." body="Move beyond raw parking pins. NaviParka\u2019s map experience is designed to help drivers understand nearby parking choices."><div className="actions"><Link href="/download" className="btn btn-primary">Get NaviParka <ArrowRight size={16}/></Link></div></PageHero><section className="section" style={{paddingTop:30}}><div className="container"><div className="pagegrid">{cards.map((c,i)=><article className="card pagecard" key={c.title}><div className="feature-number">{String(i+1).padStart(2,'0')}</div><h2 className="h3" style={{marginTop:30}}>{c.title}</h2><p className="lead" style={{fontSize:16}}>{c.body}</p></article>)}</div><div style={{marginTop:50}}><MapMockup/></div></div></section></>}
+import {PageHero} from "@/components/site";
+import Link from "next/link";
+import {ArrowRight} from "lucide-react";
+
+const cards=[
+  {title:"Not in the current release",body:"The current NaviParka app does not provide a live parking map, turn-by-turn directions or nearby parking discovery."},
+  {title:"Current focus",body:"Today, NaviParka focuses on scanning parking evidence, explaining restrictions, surfacing payment details and helping drivers track time-limited parking."},
+  {title:"Planned for V2",body:"A map experience is part of the next-version roadmap. The exact feature set will be communicated when it is ready to ship."}
+];
+
+export default function Page(){return <><PageHero eyebrow="Roadmap" title="Parking map is coming in a later version" body="We want the website to be clear about what NaviParka can do now and what is still being built."><div className="actions"><Link href="/features" className="btn btn-primary">See current features <ArrowRight size={16}/></Link></div></PageHero><section className="section" style={{paddingTop:30}}><div className="container"><div className="pagegrid">{cards.map((c,i)=><article className="card pagecard" key={c.title}><div className="feature-number">{String(i+1).padStart(2,'0')}</div><h2 className="h3" style={{marginTop:30}}>{c.title}</h2><p className="lead" style={{fontSize:16}}>{c.body}</p></article>)}</div></div></section></>}
