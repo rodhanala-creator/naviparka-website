@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Map, Car, Clock3, History, ShieldCheck, CreditCard, ScanLine, Navigation, BatteryCharging, CheckCircle2, AlertTriangle, XCircle, MapPin, Navigation2 } from "lucide-react";
+import { ArrowRight, Map, Car, Clock3, History, ShieldCheck, CreditCard, ScanLine, Navigation, BatteryCharging, CheckCircle2, AlertTriangle, XCircle, MapPin, Navigation2, Play } from "lucide-react";
 import {MobileMenu} from "@/components/interactive";
 
 export const routes=[
@@ -10,6 +10,8 @@ function Brand(){return <span className="brand"><img src="/brand/naviparka-icon.
 
 export function Header(){return <header className="nav"><div className="container navin"><Link href="/" className="logo" aria-label="NaviParka home"><Brand/></Link><nav className="navlinks"><Link href="/features">Product</Link><Link href="/how-it-works">How it works</Link><Link href="/safety">Safety</Link><Link href="/support">Support</Link></nav><Link className="btn btn-primary navcta" href="/download">Get NaviParka <ArrowRight size={16}/></Link><MobileMenu/></div></header>}
 
+
+export function PlayStoreBadge({href="/download"}:{href?:string}){return <Link href={href} className="play-store-badge" aria-label="Get NaviParka on Google Play"><span className="play-store-icon"><Play size={24} fill="currentColor"/></span><span><small>GET IT ON</small><b>Google Play</b></span></Link>}
 export function Footer(){return <footer className="footer"><div className="container"><div className="footergrid"><div><div className="logo"><Brand/></div><p>Parking rules, made simple.<br/>AI-assisted parking guidance for UK drivers.</p><div className="footer-badge">Built for UK parking</div></div><div><h4>Product</h4><Link href="/how-it-works">How it works</Link><Link href="/parking-scanner">AI Scanner</Link><Link href="/vehicle-awareness">Driver Context</Link><Link href="/features">Payment & Timer</Link></div><div><h4>Help</h4><Link href="/safety">Safety</Link><Link href="/support">Support</Link><Link href="/support/faq">FAQ</Link><Link href="/support/contact">Contact</Link></div><div><h4>Legal</h4><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/cookies">Cookies</Link><Link href="/accessibility">Accessibility</Link><Link href="/delete-account">Delete account</Link></div></div><div className="footerbottom"><span>© 2026 NaviParka. All rights reserved.</span><span>Always check local signage and conditions before leaving your vehicle.</span></div></div></footer>}
 
 const screenByKind:Record<string,{src:string,alt:string}>={
@@ -24,7 +26,7 @@ const screenByKind:Record<string,{src:string,alt:string}>={
 
 export function PhoneMockup({kind="scanner",label}:{kind?:string,label?:string}){
   const screen=screenByKind[kind]??screenByKind.scanner;
-  return <div className="device-stage"><div className="device-glow"/><div className="android-phone"><div className="android-screen"><img src={screen.src} alt={screen.alt}/></div><span className="android-camera" aria-hidden="true"/></div>{label&&<div className="mockup-label">Android · NaviParka</div>}</div>
+  return <div className="device-stage"><div className="android-phone"><div className="android-screen"><img src={screen.src} alt={screen.alt}/></div><span className="android-camera" aria-hidden="true"/></div>{label&&<div className="mockup-label">Android · NaviParka</div>}</div>
 }
 
 export function ResultCard({type,title,children}:{type:'good'|'warn'|'bad',title:string,children:React.ReactNode}){const Icon=type==='good'?CheckCircle2:type==='warn'?AlertTriangle:XCircle;return <div className={`card status-card ${type}`}><div className="status-accent"/><div className="status-top"><Icon size={17}/> {type==='good'?'ALLOWED':type==='warn'?'CONDITIONAL':'RESTRICTED'}</div><div className="status-title">{title}</div>{children}<div className="status-footer">View reasoning <ArrowRight size={14}/></div></div>}

@@ -1,52 +1,87 @@
 import Link from "next/link";
-import {ArrowRight,Camera,BrainCircuit,CheckCircle2,Car,Clock3,History,ScanLine,ShieldCheck,BadgeCheck,ReceiptText,Navigation2,BellRing,CreditCard,Copy,ExternalLink} from "lucide-react";
-import {PhoneMockup} from "@/components/site";
-
-const evidence=["Parking signs","Road markings","Time restrictions","Paid parking","Permit rules","EV restrictions"];
+import {ArrowRight,ScanLine,BrainCircuit,CreditCard,Clock3,BellRing,Car,BadgeCheck,History,ShieldCheck,CheckCircle2,ExternalLink,Copy,Camera} from "lucide-react";
+import {PhoneMockup,PlayStoreBadge} from "@/components/site";
 
 export default function Home(){return <>
-<section className="hero stage6-hero">
-  <div className="container hero-grid stage6-hero-grid">
-    <div className="hero-copy stage6-hero-copy">
-      <span className="eyebrow">AI-assisted UK parking guidance</span>
-      <h1 className="h1">Parking rules,<br/><span className="marker-word">made simple.</span></h1>
-      <p className="lead">Scan a UK parking sign or road markings. NaviParka turns the visible rules into plain English and helps you handle payment or timing before you walk away.</p>
-      <div className="actions"><Link href="/download" className="btn btn-primary btn-lg">Get NaviParka <ArrowRight size={17}/></Link><Link href="/how-it-works" className="btn btn-secondary btn-lg">See how it works</Link></div>
-      <div className="trust-strip"><span><CheckCircle2 size={15}/> Android first</span><span><ShieldCheck size={15}/> Safety-conscious AI</span><span><Navigation2 size={15}/> Built for UK parking</span></div>
+<section className="s7-hero">
+  <div className="container s7-hero-grid">
+    <div className="s7-hero-copy">
+      <span className="s7-kicker">AI-assisted parking guidance for UK drivers</span>
+      <h1>Parking rules,<br/><span>without the guesswork.</span></h1>
+      <p>Scan a parking sign or road markings. NaviParka explains the important restrictions in plain English and helps you take the next step before you leave your car.</p>
+      <div className="s7-download-row"><PlayStoreBadge/><Link href="/how-it-works" className="s7-text-cta">See how it works <ArrowRight size={17}/></Link></div>
+      <div className="s7-proof-row"><span><CheckCircle2 size={16}/>Android first</span><span><ShieldCheck size={16}/>Safety-conscious AI</span><span><CreditCard size={16}/>Payment handoff</span></div>
     </div>
-    <div className="hero-device stage6-device-scene">
-      <div className="hero-blue-blob"/>
-      <div className="hero-road-line"/>
-      <div className="hero-phone-tilt"><PhoneMockup kind="scanner"/></div>
-      <div className="floating-proof proof-one light-proof"><ScanLine size={17}/><span><b>Scan once</b><small>Sign or road markings</small></span></div>
-      <div className="floating-proof proof-two light-proof"><CheckCircle2 size={17}/><span><b>Rules simplified</b><small>Plain-English guidance</small></span></div>
-      <div className="floating-proof proof-three light-proof"><ReceiptText size={17}/><span><b>Payment found</b><small>Open the service directly</small></span></div>
+    <div className="s7-hero-visual">
+      <div className="s7-hero-phone"><PhoneMockup kind="scanner"/></div>
+      <div className="s7-float s7-float-left"><ScanLine size={18}/><div><b>Scan once</b><small>Signs or road markings</small></div></div>
+      <div className="s7-float s7-float-right"><CreditCard size={18}/><div><b>Payment found</b><small>Open the external service</small></div></div>
     </div>
   </div>
 </section>
 
-<section className="feature-ribbon"><div className="container ribbon-grid">
-  <div><Camera size={21}/><span><b>Scan parking evidence</b><small>No mode selector</small></span></div>
-  <div><BrainCircuit size={21}/><span><b>Understand the rules</b><small>Clear conditions</small></span></div>
-  <div><CreditCard size={21}/><span><b>Open payment links</b><small>Provider + location code</small></span></div>
-  <div><BellRing size={21}/><span><b>Keep track of time</b><small>Timer + reminders</small></span></div>
-</div></section>
+<section className="s7-outcomes">
+  <div className="container s7-outcomes-grid">
+    <div className="s7-outcome"><span>01</span><ScanLine size={24}/><h3>Scan</h3><p>Point your camera at parking signs or road markings. No scan-type selector needed.</p></div>
+    <div className="s7-outcome"><span>02</span><BrainCircuit size={24}/><h3>Understand</h3><p>Turn visible restrictions, times and conditions into plain-English guidance.</p></div>
+    <div className="s7-outcome"><span>03</span><ExternalLink size={24}/><h3>Act</h3><p>Open a payment service, copy a location code or keep track of your parking time.</p></div>
+  </div>
+</section>
 
-<section className="section stage6-flow"><div className="container"><div className="section-heading centered"><span className="eyebrow">The NaviParka flow</span><h2 className="h2">Three steps between confusion and clarity.</h2><p className="lead">Built for the moment you are standing beside the car and need a useful answer quickly.</p></div><div className="flow-grid premium-flow"><div className="flow-card"><div className="flow-top"><span>01</span><Camera size={25}/></div><h3>Scan</h3><p>Point the camera at a parking sign or road markings. NaviParka identifies the evidence automatically.</p><span className="mini-road"/></div><div className="flow-arrow">→</div><div className="flow-card featured"><div className="flow-top"><span>02</span><BrainCircuit size={25}/></div><h3>Understand</h3><p>Important restrictions, times and conditions are rewritten into language you can actually use.</p><span className="mini-road"/></div><div className="flow-arrow">→</div><div className="flow-card"><div className="flow-top"><span>03</span><CheckCircle2 size={25}/></div><h3>Act</h3><p>Open a payment service, copy a location code, or keep track of a time-limited parking session.</p><span className="mini-road"/></div></div></div></section>
+<section className="s7-section s7-product">
+  <div className="container s7-product-grid">
+    <div className="s7-phone-clean s7-phone-left"><PhoneMockup kind="scanner"/></div>
+    <div className="s7-product-copy">
+      <span className="s7-kicker">AI parking scanner</span>
+      <h2>Point your camera.<br/><span>NaviParka reads what matters.</span></h2>
+      <p>The scanner is designed around parking signs and road markings. NaviParka analyses what is visible in the frame so you do not have to tell it what you are scanning first.</p>
+      <div className="s7-feature-list"><span><Camera size={18}/>Parking signs</span><span><ScanLine size={18}/>Road markings</span><span><Clock3 size={18}/>Time restrictions</span><span><CreditCard size={18}/>Paid parking</span></div>
+      <Link href="/parking-scanner" className="s7-text-cta">Explore the scanner <ArrowRight size={17}/></Link>
+    </div>
+  </div>
+</section>
 
-<section className="section scanner-showcase"><div className="container grid2 product-split"><div className="scanner-composition"><div className="scanner-card-bg"/><div className="scanner-phone-main"><PhoneMockup kind="scanner"/></div><div className="callout callout-a"><ScanLine size={18}/><b>Automatic evidence recognition</b></div><div className="callout callout-b"><span className="status-dot allowed"/><b>No scan-type toggle</b></div><div className="callout callout-c"><span className="status-dot blue"/><b>Built around UK parking</b></div></div><div className="product-copy"><span className="eyebrow">AI Parking Scanner</span><h2 className="h2">Point your camera.<br/><span className="marker-word small-marker">NaviParka reads the scene.</span></h2><p className="lead">The scanner is designed around parking signs and road markings. You do not need to tell NaviParka what you are scanning first—it analyses what is visible in the frame.</p><div className="pillrow">{evidence.map(x=><span className="pill" key={x}>{x}</span>)}</div><Link href="/parking-scanner" className="text-link roomy">Explore the scanner <ArrowRight size={15}/></Link></div></div></section>
+<section className="s7-section s7-payment">
+  <div className="container s7-payment-grid">
+    <div className="s7-payment-copy">
+      <span className="s7-kicker light">When payment is required</span>
+      <h2>From the sign to the payment service.</h2>
+      <p>When supported payment details can be identified, NaviParka surfaces the provider and location code and gives you a direct action to open the relevant external payment service.</p>
+      <div className="s7-payment-points"><div><CreditCard size={21}/><span><b>Provider shown clearly</b><small>See the payment service in the result.</small></span></div><div><Copy size={21}/><span><b>Location code ready</b><small>Copy the code without re-reading the sign.</small></span></div><div><ExternalLink size={21}/><span><b>Open the service</b><small>Continue payment outside NaviParka.</small></span></div></div>
+    </div>
+    <div className="s7-payment-visual">
+      <div className="s7-phone-clean s7-phone-payment"><PhoneMockup kind="payment"/></div>
+      <div className="s7-payment-card"><small>LOCATION CODE</small><strong>686995</strong><span>Ready to copy</span></div>
+    </div>
+  </div>
+</section>
 
-<section className="section result-story"><div className="container"><div className="section-heading"><span className="eyebrow">Clear parking guidance</span><h2 className="h2">The answer first.<br/><span className="marker-word small-marker">The important details right after.</span></h2><p className="lead">NaviParka is designed to surface the restriction you need to understand, then the conditions that affect what you should do next.</p></div><div className="result-story-grid"><div className="decision-card allowed-card"><span className="decision-icon">✓</span><span className="decision-label">CLEAR RESULT</span><h3>You can park here</h3><div><span>Allowed until</span><b>6:00 PM</b></div><div><span>Maximum stay</span><b>2 hours</b></div></div><div className="decision-card pay-card"><span className="decision-icon">£</span><span className="decision-label">NEXT STEP</span><h3>Payment required</h3><div><span>Provider</span><b>Shown in app</b></div><div><span>Location code</span><b>Ready to copy</b></div></div><div className="decision-card stop-card"><span className="decision-icon">×</span><span className="decision-label">RESTRICTION</span><h3>Don’t park here</h3><div><span>Restriction</span><b>Permit holders</b></div><div><span>Applies</span><b>8 AM–6 PM</b></div></div></div></div></section>
+<section className="s7-section s7-context">
+  <div className="container s7-context-grid">
+    <div className="s7-context-copy">
+      <span className="s7-kicker">Driver context</span>
+      <h2>Useful details stay with you.</h2>
+      <p>Vehicle information, Blue Badge mode, reminders and scan history help NaviParka fit the parking situation around the driver, not just the sign.</p>
+      <div className="s7-context-list"><div><Car size={20}/><span><b>Your vehicle</b><small>Keep relevant vehicle information available to new scans.</small></span></div><div><BadgeCheck size={20}/><span><b>Blue Badge mode</b><small>Apply Blue Badge context when relevant.</small></span></div><div><BellRing size={20}/><span><b>Move-car reminders</b><small>Get prompted before your parking time runs out.</small></span></div><div><History size={20}/><span><b>Scan history</b><small>Return to previous parking checks.</small></span></div></div>
+    </div>
+    <div className="s7-dual-phone">
+      <div className="s7-dual-a"><PhoneMockup kind="vehicle"/></div>
+      <div className="s7-dual-b"><PhoneMockup kind="settings"/></div>
+    </div>
+  </div>
+</section>
 
-<section className="section payment-showcase"><div className="container payment-stage"><div className="payment-copy"><span className="eyebrow">Payment handoff</span><h2 className="h2">From reading the sign to <span className="marker-word small-marker">paying online.</span></h2><p className="lead">When supported payment information is visible, NaviParka can show the provider and location code, then give you a direct action to open the relevant external payment service.</p><div className="payment-mini-grid"><div><CreditCard size={20}/><b>Payment provider</b><small>Shown clearly</small></div><div><Copy size={20}/><b>Location code</b><small>Ready to copy</small></div><div><ExternalLink size={20}/><b>Open service</b><small>External payment link</small></div></div></div><div className="payment-visual"><div className="payment-orbit"/><div className="payment-phone-tilt"><PhoneMockup kind="payment"/></div><div className="payment-callout"><small>LOCATION CODE</small><strong>686995</strong><span>Copy</span></div><div className="payment-callout provider"><small>PAYMENT SERVICE</small><strong>Online provider</strong><span>Open ↗</span></div></div></div></section>
+<section className="s7-section s7-trust">
+  <div className="container s7-trust-grid">
+    <div><span className="s7-kicker light">Responsible by design</span><h2>Helpful AI. Clear limitations.</h2><p>NaviParka is designed to make parking restrictions easier to understand. Physical signage, temporary notices and local conditions still matter.</p><Link href="/safety" className="s7-light-link">Read about safety <ArrowRight size={17}/></Link></div>
+    <div className="s7-trust-cards"><article><ShieldCheck size={25}/><h3>Evidence first</h3><p>Guidance is based on the parking evidence visible to the app.</p></article><article><CheckCircle2 size={25}/><h3>Clear next steps</h3><p>Important conditions are surfaced before secondary detail.</p></article><article><Clock3 size={25}/><h3>Time-aware</h3><p>Timers and reminders help with time-limited parking sessions.</p></article><article><Car size={25}/><h3>Driver aware</h3><p>Vehicle and Blue Badge context can matter to a parking decision.</p></article></div>
+  </div>
+</section>
 
-<section className="section personalisation-showcase"><div className="container grid2 product-split reverse-mobile"><div className="product-copy"><span className="eyebrow">Driver context</span><h2 className="h2">Your parking situation is <span className="marker-word small-marker">personal.</span></h2><p className="lead">Add the vehicle you use for parking and enable Blue Badge mode when relevant. NaviParka can use that context when presenting new scan guidance.</p><div className="context-list"><div><Car size={19}/><span><b>Add your vehicle</b><small>Keep relevant vehicle information available to new scans.</small></span></div><div><BadgeCheck size={19}/><span><b>Blue Badge mode</b><small>Apply Blue Badge context to new scans when enabled.</small></span></div><div><History size={19}/><span><b>Scan history</b><small>Return to previous parking checks when history is enabled.</small></span></div></div><Link href="/vehicle-awareness" className="text-link roomy">See driver context <ArrowRight size={15}/></Link></div><div className="profile-composition"><div className="profile-phone one"><PhoneMockup kind="vehicle"/></div><div className="profile-phone two"><PhoneMockup kind="settings"/></div><div className="profile-chip blue-chip"><Car size={17}/> Vehicle context</div><div className="profile-chip green-chip"><BadgeCheck size={17}/> Blue Badge mode</div></div></div></section>
-
-<section className="section utility-strip"><div className="container utility-strip-grid"><div className="utility-intro"><span className="eyebrow">Useful after the scan</span><h2 className="h2">NaviParka stays useful after you understand the sign.</h2></div><div className="utility-tile timer-tile"><Clock3 size={26}/><h3>Parking timer</h3><p>Keep the session end time close at hand.</p><div className="timer-display">00:51 <small>remaining</small></div></div><div className="utility-tile reminder-tile"><BellRing size={26}/><h3>Move-car reminders</h3><p>Get a prompt before a time-limited parking session runs out.</p><div className="toggle-sim"><span>Reminder</span><b>On</b></div></div><div className="utility-tile history-tile"><History size={26}/><h3>Scan history</h3><p>Revisit previous parking checks from your profile.</p><div className="history-lines"><span>Victoria Road</span><span>Tennyson Road</span></div></div></div></section>
-
-<section className="section trust-showcase"><div className="container trust-stage"><div className="trust-copy"><span className="eyebrow">Built for real-world decisions</span><h2 className="h2">Helpful AI.<br/><span className="marker-word small-marker">Clear limitations.</span></h2><p className="lead">Temporary notices, obscured signs and conditions outside the camera frame can still matter. NaviParka is designed to assist your decision, not pretend uncertainty does not exist.</p><Link href="/safety" className="btn btn-secondary">Read about safety <ArrowRight size={16}/></Link></div><div className="trust-cards">{[["Evidence-first",ScanLine,"Starts with the parking evidence you scan."],["Clear conditions",CheckCircle2,"Times, payment and restrictions are surfaced in readable language."],["Driver context",Car,"Vehicle and Blue Badge settings can add relevant context."],["Driver responsibility",ShieldCheck,"Always check physical signage and local conditions before leaving your vehicle."]].map(([t,I,d]:any)=><div className="trust-card" key={t}><span><I size={20}/></span><b>{t}</b><p>{d}</p></div>)}</div></div></section>
-
-<section className="section roadmap-light"><div className="container roadmap-card"><div><span className="eyebrow">Roadmap · Version 2</span><h2 className="h2">Parking discovery and map are coming later.</h2><p className="lead">The current release does not include a parking map or directions. We keep future features clearly separated from what is available today.</p></div><Link href="/parking-map" className="btn btn-secondary">View roadmap <ArrowRight size={15}/></Link></div></section>
-
-<section className="section final-section"><div className="container"><div className="final-cta stage6-final"><div className="final-copy"><span className="eyebrow">NaviParka for Android</span><h2 className="h2">Read the rules.<br/>Handle the next step.</h2><p className="lead">Scan parking evidence, understand restrictions and get the payment or timing information you need before you walk away.</p><Link href="/download" className="btn btn-primary btn-lg">Get NaviParka <ArrowRight size={16}/></Link><small>AI-assisted guidance. Always check local signage and conditions.</small></div><div className="final-device stage6-final-device"><PhoneMockup kind="onboarding"/></div></div></div></section>
+<section className="s7-download">
+  <div className="container s7-download-grid">
+    <div className="s7-download-copy"><span className="s7-kicker">NaviParka for Android</span><h2>Understand the sign.<br/>Take the next step.</h2><p>Scan parking evidence, understand restrictions, open payment services and keep track of parking time from one Android app.</p><PlayStoreBadge/><small>Google Play link will point to the live listing when your release is published.</small></div>
+    <div className="s7-download-phone"><PhoneMockup kind="onboarding"/></div>
+  </div>
+</section>
 </>}
