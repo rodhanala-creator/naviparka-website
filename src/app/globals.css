@@ -473,3 +473,101 @@ input,textarea,select{font-size:14px;line-height:1.5}
 @media(max-width:720px){
   .pagecard{padding:24px!important;min-height:0!important}.band{padding:26px!important;border-radius:20px!important}.legal h2{font-size:22px}.legal p{font-size:13px}.form{max-width:none!important}
 }
+
+
+/* Stage 10: fix mockup framing issues and lock a consistent visual system sitewide. */
+:root{
+  --np-surface:#ffffff;
+  --np-surface-soft:#f5f8fe;
+  --np-shadow-soft:0 16px 42px rgba(20,34,53,.07);
+}
+
+body,p,li,input,textarea,select{letter-spacing:-.006em}
+p,li{line-height:1.7}
+.pagegrid{gap:22px!important}
+.pagecard,.band,.form.card,.legal.card,.status-row,.support-search,.field input,.field textarea,.field select{
+  box-shadow:var(--np-shadow-soft)!important;
+}
+.pagecard,.form.card,.legal.card{
+  background:var(--np-surface)!important;
+  border-color:#dfe6ee!important;
+}
+.band{
+  background:var(--np-surface-soft)!important;
+  border-color:#d6e3f8!important;
+}
+.pagehero .lead,.pagecard p,.band p,.legal p,.legal li,.footergrid a,.footergrid p,.footerbottom,.cookie p{
+  line-height:1.72!important;
+}
+.pagecard .h3,.legal h2,.footergrid h4,.field label{
+  font-weight:700!important;
+}
+
+/* Payment mockup: keep the floating code card above the device and visibly outside the handset. */
+.p8-payment-product{
+  min-height:650px!important;
+  overflow:visible!important;
+  padding-inline:18px 48px!important;
+}
+.p8-phone-pay{
+  position:relative!important;
+  z-index:2!important;
+  transform:rotate(1.8deg) translateX(-8px)!important;
+}
+.p8-phone-pay .android-phone{width:314px!important}
+.p8-code-card{
+  z-index:6!important;
+  right:-1%!important;
+  bottom:12%!important;
+  min-width:182px!important;
+}
+
+/* Download mockup: stop the phone from being clipped at the bottom of the card. */
+.p8-download-card{
+  overflow:visible!important;
+  align-items:center!important;
+}
+.p8-download-product{
+  height:auto!important;
+  min-height:430px!important;
+  align-self:center!important;
+  overflow:visible!important;
+  padding-block:10px 0!important;
+}
+.p8-download-product .android-phone{width:296px!important}
+.p8-download-product .p8-phone{
+  transform:translateY(0) rotate(1.5deg)!important;
+}
+
+/* Final typography polish for consistent line spacing and colour language across the full site. */
+.p8-hero-copy>p,.p8-story-copy>p,.p8-payment-copy>p,.p8-context-head>p,.p8-trust-copy>p,.p8-download-copy p,.pagehero .lead,
+.pagecard p,.band p,.legal p,.legal li,.support-search,.field input,.field textarea,.field select{
+  color:var(--np-copy)!important;
+}
+.p8-story-copy h2,.p8-payment h2,.p8-context h2,.p8-trust h2,.p8-download h2,.pagehero .h1,.pagecard .h3,.legal h2{
+  color:var(--np-ink)!important;
+}
+.p8-eyebrow,.pagehero .eyebrow,.feature-number{color:var(--np-blue)!important}
+
+@media(max-width:1050px){
+  .p8-payment-product{padding-inline:0 18px!important;min-height:600px!important}
+  .p8-phone-pay{transform:rotate(1.5deg) translateX(-2px)!important}
+  .p8-code-card{right:6%!important;bottom:11%!important}
+  .p8-download-card{padding:52px 54px 34px!important}
+  .p8-download-product{min-height:390px!important}
+  .p8-download-product .p8-phone{transform:translateY(0) rotate(1deg)!important}
+}
+
+@media(max-width:720px){
+  .p8-payment-product{min-height:520px!important;padding-inline:0!important}
+  .p8-phone-pay .android-phone{width:236px!important}
+  .p8-code-card{right:2%!important;bottom:9%!important;min-width:150px!important}
+  .p8-download-card{padding:36px 22px 24px!important;border-radius:24px!important;min-height:0!important}
+  .p8-download-product{min-height:0!important;padding-top:12px!important}
+  .p8-download-product .android-phone{width:220px!important}
+  .p8-download-product .p8-phone{transform:none!important}
+}
+
+@media(max-width:420px){
+  .p8-code-card{right:0!important;bottom:8%!important}
+}
