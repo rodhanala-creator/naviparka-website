@@ -188,3 +188,288 @@ html,body{background:var(--p8-cream)!important;color:var(--p8-ink)!important}
 .pagehero{background:#fff!important;border-bottom:1px solid #e6e6e1!important}.pagehero .h1{color:var(--p8-ink)!important}.pagehero .lead{color:var(--p8-muted)!important}.pagecard,.card{background:#fff!important;border-color:#e4e6e8!important;color:var(--p8-ink)!important}.footer{background:#071523!important;color:#fff!important}.footer .brand-name{color:#fff!important}.footer a,.footer p,.footerbottom{color:#aab7c5!important}
 @media(max-width:1050px){.p8-hero-grid,.p8-story-grid,.p8-payment-grid,.p8-trust-grid,.p8-download-card{grid-template-columns:1fr}.p8-hero-copy{text-align:center}.p8-hero-copy>p{margin-inline:auto}.p8-hero-actions,.p8-mini-proof{justify-content:center}.p8-hero-product{min-height:600px}.p8-story-copy{order:-1}.p8-context-head{grid-template-columns:1fr}.p8-context-head>p{max-width:750px}.p8-context-stage{height:720px}.p8-profile{left:22%}.p8-settings{right:22%}.p8-download-card{padding-bottom:0}.p8-download-product{min-height:500px}.p8-trust-grid{gap:50px}}
 @media(max-width:720px){.nav{top:8px!important}.navin{height:64px!important;border-radius:17px!important}.p8-hero{padding:95px 0 65px}.p8-hero-copy{text-align:left}.p8-hero-copy h1{font-size:58px;line-height:.9}.p8-hero-copy>p{font-size:17px;margin:0}.p8-hero-actions,.p8-mini-proof{justify-content:flex-start}.p8-hero-product{min-height:500px}.p8-phone-main .android-phone{width:270px!important}.p8-caption{padding:10px 11px}.p8-caption.top{left:-3%;top:30%}.p8-caption.bottom{right:-4%;bottom:18%}.p8-valuebar-grid{grid-template-columns:1fr}.p8-valuebar-grid>div+div{border-left:0;border-top:1px solid var(--p8-line)}.p8-story,.p8-payment,.p8-context,.p8-trust,.p8-download{padding:80px 0}.p8-story-grid{gap:30px}.p8-story-product{min-height:540px}.p8-phone-scan .android-phone{width:270px!important}.p8-story-copy h2,.p8-payment h2,.p8-context h2,.p8-trust h2,.p8-download h2{font-size:44px}.p8-inline-features{grid-template-columns:1fr}.p8-payment-grid{gap:20px}.p8-payment-product{min-height:560px}.p8-phone-pay .android-phone{width:250px!important}.p8-code-card{right:-2%;bottom:18%;min-width:155px}.p8-context-head{gap:20px}.p8-context-stage{height:640px;border-radius:28px}.p8-context-stage .android-phone{width:188px!important}.p8-profile{left:1%;top:70px}.p8-settings{right:1%;top:130px}.p8-context-card{min-width:155px;padding:11px 12px}.p8-context-card.one{left:2%;top:10%}.p8-context-card.three{right:2%;top:8%}.p8-context-card.two{left:2%;bottom:9%}.p8-context-card.four{right:2%;bottom:8%}.p8-context-card small{display:none}.p8-download-card{padding:42px 26px 0;border-radius:28px}.p8-download-product .android-phone{width:245px!important}.p8-download-product{min-height:410px}.p8-download-product .p8-phone{transform:translateY(70px) rotate(3deg)}}
+
+/* ===== Stage 9: NaviParka app typography + full visual QA ===== */
+:root{
+  --np-font:"Poppins",Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --np-ink:#081321;
+  --np-copy:#5c6979;
+  --np-blue:#176bff;
+  --np-border:#e2e6ec;
+}
+
+html{overflow-x:hidden}
+body{
+  font-family:var(--np-font)!important;
+  font-weight:400;
+  line-height:1.5;
+  overflow-x:hidden;
+  text-rendering:optimizeLegibility;
+}
+button,input,textarea,select{font-family:var(--np-font)!important}
+strong,b{font-weight:700}
+
+/* Match the rounded, confident typography used inside the Android app. */
+.h1,.h2,.h3,
+.p8-hero-copy h1,
+.p8-story-copy h2,.p8-payment h2,.p8-context h2,.p8-trust h2,.p8-download h2,
+.pagehero h1,.pagehero .h1,
+.brand-name,.navlinks a,.btn,
+.p8-valuebar b,.p8-trust-points h3{
+  font-family:var(--np-font)!important;
+}
+.h1{font-weight:700!important;line-height:1.02!important;letter-spacing:-.045em!important}
+.h2{font-weight:700!important;line-height:1.06!important;letter-spacing:-.04em!important}
+.h3{font-weight:700!important;line-height:1.16!important;letter-spacing:-.025em!important}
+.lead{line-height:1.62!important;letter-spacing:-.01em}
+.sub{line-height:1.6!important}
+
+/* Give the product site more room and remove cramped desktop wraps. */
+.nav .container,.p8-hero .container{width:min(1400px,calc(100% - 72px))}
+.p8-story .container,.p8-payment .container,.p8-context .container,.p8-trust .container,.p8-download .container,.p8-valuebar .container{width:min(1320px,calc(100% - 64px))}
+
+/* Navigation typography and optical alignment */
+.navin{height:74px!important;padding-inline:22px!important}
+.brand{gap:11px}
+.brand-icon{width:35px;height:35px;border-radius:11px}
+.brand-name{font-size:20px!important;font-weight:700!important;letter-spacing:-.035em!important;line-height:1!important}
+.navlinks{gap:32px}
+.navlinks a{font-size:13px!important;font-weight:600!important;letter-spacing:-.01em}
+.navcta{font-weight:600!important;min-height:46px!important;padding-inline:19px!important}
+
+/* Hero: exactly two deliberate lines on desktop, with app-like weight. */
+.p8-hero{padding:132px 0 88px!important}
+.p8-hero-grid{grid-template-columns:1.08fr .92fr!important;gap:64px!important}
+.p8-hero-copy{max-width:740px}
+.p8-pill{font-weight:600!important;letter-spacing:.02em!important;font-size:11px!important}
+.p8-hero-copy h1{
+  margin:22px 0 26px!important;
+  max-width:760px!important;
+  font-size:clamp(62px,4.9vw,84px)!important;
+  line-height:1.01!important;
+  letter-spacing:-.05em!important;
+  font-weight:700!important;
+}
+.p8-hero-copy h1 span,.p8-hero-copy h1 em{display:block}
+.p8-hero-copy h1 em{font-style:normal;font-weight:700!important;color:var(--p8-blue)}
+.p8-hero-copy>p{max-width:700px!important;font-size:18px!important;line-height:1.65!important;letter-spacing:-.012em}
+.p8-hero-actions{gap:20px!important;margin-top:30px!important}
+.p8-link{font-weight:600!important;font-size:14px}
+.p8-mini-proof{gap:18px!important;margin-top:22px!important;font-size:11px!important}
+.p8-mini-proof span{font-weight:500}
+.p8-hero-product{min-height:620px!important}
+.p8-phone-main{transform:rotate(2deg)!important}
+.p8-phone-main .android-phone{width:342px!important}
+.p8-caption{border-radius:15px!important;padding:12px 14px!important;box-shadow:0 16px 34px rgba(26,41,60,.10)!important}
+.p8-caption b{font-size:11px!important;font-weight:600!important;line-height:1.3}
+.p8-caption small{font-size:9px!important;line-height:1.35}
+.p8-caption.top{left:2%!important;top:29%!important}
+.p8-caption.bottom{right:1%!important;bottom:22%!important}
+
+/* Official Google Play badge: no hand-built imitation. */
+.play-store-badge{
+  display:inline-flex!important;
+  align-items:center!important;
+  width:190px!important;
+  height:57px!important;
+  min-height:0!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+.play-store-badge img{display:block;width:100%;height:auto;max-width:none}
+.play-store-badge:hover{transform:translateY(-2px)!important;filter:drop-shadow(0 10px 18px rgba(8,19,33,.14));box-shadow:none!important}
+.play-store-icon,.play-store-badge>span{display:none!important}
+
+/* Scan → understand → act strip */
+.p8-valuebar-grid>div{padding:28px 30px!important;column-gap:13px!important}
+.p8-valuebar span{font-weight:700!important;font-size:10px!important}
+.p8-valuebar b{font-weight:600!important;font-size:17px!important;line-height:1.3}
+.p8-valuebar small{font-size:11px;line-height:1.45;margin-top:2px!important}
+
+/* Section typography: remove overly tight editorial tracking from Stage 8. */
+.p8-story,.p8-payment,.p8-context{padding:118px 0!important}
+.p8-trust{padding:112px 0!important}
+.p8-download{padding:100px 0!important}
+.p8-story-grid{gap:92px!important}
+.p8-story-copy h2,.p8-payment h2,.p8-context h2,.p8-trust h2,.p8-download h2{
+  font-size:clamp(42px,4.3vw,64px)!important;
+  line-height:1.06!important;
+  letter-spacing:-.043em!important;
+  font-weight:700!important;
+  margin:16px 0 22px!important;
+}
+.p8-eyebrow{font-size:10px!important;font-weight:700!important;letter-spacing:.12em!important}
+.p8-story-copy>p,.p8-context-head>p,.p8-payment-copy>p,.p8-trust-copy>p,.p8-download-copy p{
+  font-size:16px!important;
+  line-height:1.68!important;
+  letter-spacing:-.008em;
+}
+.p8-inline-features span{font-size:12px!important;font-weight:600!important;line-height:1.45}
+
+/* Product phones: slightly less tilt, cleaner screenshot framing. */
+.android-phone{border-radius:38px!important;padding:6px!important;box-shadow:0 28px 62px rgba(19,32,49,.20),0 0 0 1px #191f27!important}
+.android-screen{border-radius:32px!important}
+.p8-phone-scan{transform:rotate(-2.5deg)!important}
+.p8-phone-scan .android-phone{width:326px!important}
+.p8-story-product{min-height:640px!important}
+.p8-phone-pay{transform:rotate(2.5deg)!important}
+.p8-phone-pay .android-phone{width:310px!important}
+.p8-payment-product{min-height:630px!important}
+
+/* Payment section */
+.p8-payment-grid{gap:86px!important}
+.p8-payment-list{margin-top:28px!important}
+.p8-payment-list>div{padding:16px 0!important}
+.p8-payment-list b{font-size:13px!important;font-weight:600!important}
+.p8-payment-list small{font-size:11px!important;line-height:1.5}
+.p8-code-card{right:4%!important;bottom:19%!important;border-radius:16px!important;padding:14px 17px!important;min-width:172px!important}
+.p8-code-card small{font-weight:700!important}
+.p8-code-card strong{font-size:26px!important;font-weight:700!important}
+.p8-code-card span{font-size:10px!important;font-weight:600!important}
+
+/* Driver context: reduce visual clutter and stop callout/phone collisions. */
+.p8-context-head{gap:60px!important;margin-bottom:46px!important}
+.p8-context-stage{height:700px!important;border-radius:32px!important;box-shadow:0 20px 54px rgba(34,41,53,.055)!important}
+.p8-context-stage .android-phone{width:252px!important}
+.p8-profile{left:20%!important;top:58px!important;transform:rotate(-5deg)!important}
+.p8-settings{right:20%!important;top:92px!important;transform:rotate(4.5deg)!important}
+.p8-context-card{min-width:188px!important;border-radius:15px!important;padding:13px 15px!important;box-shadow:0 14px 32px rgba(27,42,61,.09)!important}
+.p8-context-card b{font-size:11px!important;font-weight:600!important;line-height:1.35}
+.p8-context-card small{font-size:9px!important;line-height:1.4}
+.p8-context-card.one{left:4%!important;top:25%!important}
+.p8-context-card.two{left:6%!important;bottom:16%!important}
+.p8-context-card.three{right:5%!important;top:21%!important}
+.p8-context-card.four{right:4%!important;bottom:17%!important}
+
+/* Trust section */
+.p8-trust-grid{gap:84px!important}
+.p8-trust-points article{padding:24px 0!important;grid-template-columns:52px 1fr!important}
+.p8-trust-points span{font-size:10px!important;font-weight:700!important}
+.p8-trust-points h3{font-size:20px!important;font-weight:600!important;line-height:1.25}
+.p8-trust-points p{font-size:12px!important;line-height:1.58!important}
+
+/* Download card */
+.p8-download-card{min-height:570px!important;border-radius:32px!important;padding:60px 72px!important}
+.p8-download-copy p{margin-bottom:22px!important}
+.p8-download-copy>small{font-size:10px;line-height:1.55!important;margin-top:12px!important}
+.p8-download-product .android-phone{width:292px!important}
+.p8-download-product .p8-phone{transform:translateY(68px) rotate(2deg)!important}
+
+/* Inner pages: consistent app-like type and readable line lengths. */
+.pagehero{padding:118px 0 92px!important}
+.pagehero .container{width:min(1120px,calc(100% - 64px))}
+.pagehero .eyebrow{font-family:var(--np-font)!important;font-weight:700!important;letter-spacing:.12em!important}
+.pagehero .h1{font-size:clamp(48px,5vw,72px)!important;max-width:900px!important;margin:18px 0 22px!important;line-height:1.04!important;letter-spacing:-.045em!important;font-weight:700!important}
+.pagehero .lead{font-size:17px!important;line-height:1.65!important;max-width:760px!important}
+.pagecard,.card{border-radius:22px}
+
+/* Buttons and forms use real available Poppins weights instead of synthetic 780/850. */
+.btn{font-weight:600!important;letter-spacing:-.005em}
+.text-link{font-weight:600!important}
+input,textarea,select{font-size:14px;line-height:1.5}
+
+/* Cookie banner: compact, persistent, and no longer blocks the hero after consent. */
+.cookie-wrap{left:20px!important;right:20px!important;bottom:18px!important}
+.cookie{width:min(760px,100%)!important;padding:15px 16px!important;grid-template-columns:1.4fr auto!important;gap:18px!important;border-radius:18px!important;background:rgba(255,255,255,.98)!important;box-shadow:0 18px 50px rgba(24,38,57,.14)!important}
+.cookie-copy>b{font-size:14px!important;font-weight:700!important}
+.cookie p{font-size:11px!important;line-height:1.5!important;margin-top:4px!important}
+.cookie-actions{align-items:center!important;gap:7px!important;flex-wrap:nowrap!important}
+.cookie-actions .btn{min-height:38px!important;padding:0 13px!important;font-size:10px!important;white-space:nowrap}
+.cookie-manage{border:0;background:transparent;color:#586678;font:inherit;font-size:10px;font-weight:600;padding:8px 7px;cursor:pointer;white-space:nowrap}
+.cookie-manage:hover{color:var(--np-blue)}
+.preference-row{font-size:11px!important;padding:10px 0!important;margin-top:8px!important}
+.preference-row strong{font-size:11px}
+.preference-row small{font-size:9px}
+
+/* Footer spacing and type */
+.footergrid h4{font-family:var(--np-font)!important;font-weight:600!important;letter-spacing:-.01em}
+.footergrid a,.footergrid p{font-size:12px;line-height:1.65}
+.footerbottom{gap:16px!important;font-size:10px!important;line-height:1.5!important;flex-wrap:wrap}
+
+/* Tablet QA */
+@media(max-width:1180px){
+  .nav .container,.p8-hero .container,.p8-story .container,.p8-payment .container,.p8-context .container,.p8-trust .container,.p8-download .container,.p8-valuebar .container{width:min(100% - 48px,1120px)}
+  .p8-hero-grid{grid-template-columns:1fr 1fr!important;gap:40px!important}
+  .p8-hero-copy h1{font-size:clamp(58px,6vw,72px)!important}
+  .p8-hero-copy>p{font-size:17px!important}
+  .p8-caption.top{left:-2%!important}.p8-caption.bottom{right:-2%!important}
+  .p8-context-stage .android-phone{width:228px!important}.p8-profile{left:18%!important}.p8-settings{right:18%!important}
+}
+
+@media(max-width:1050px){
+  .p8-hero-grid{grid-template-columns:1fr!important;gap:30px!important}
+  .p8-hero-copy{text-align:center!important;max-width:760px;margin-inline:auto}
+  .p8-hero-copy>p{margin-inline:auto!important}
+  .p8-hero-actions,.p8-mini-proof{justify-content:center!important}
+  .p8-hero-product{min-height:560px!important}
+  .p8-caption.top{left:15%!important}.p8-caption.bottom{right:14%!important}
+  .p8-story-grid{gap:28px!important}.p8-story-copy{order:-1!important}
+  .p8-context-head{gap:18px!important}
+  .p8-context-stage{height:650px!important}.p8-context-stage .android-phone{width:220px!important}.p8-profile{left:17%!important}.p8-settings{right:17%!important}
+  .p8-download-card{padding:52px 54px 0!important}
+}
+
+/* Mobile QA: prevent oversized headings, clipped callouts and crowded context composition. */
+@media(max-width:720px){
+  .container,.nav .container,.p8-hero .container,.p8-story .container,.p8-payment .container,.p8-context .container,.p8-trust .container,.p8-download .container,.p8-valuebar .container,.pagehero .container{width:min(100% - 28px,680px)!important}
+  .nav{top:8px!important}.navin{height:62px!important;padding-inline:12px!important;border-radius:16px!important}
+  .brand-icon{width:31px;height:31px}.brand-name{font-size:18px!important}.navcta,.navlinks{display:none!important}.mobile-menu{display:block!important;margin-left:auto}
+  .p8-hero{padding:92px 0 62px!important}
+  .p8-hero-copy{text-align:left!important;margin:0}
+  .p8-pill{font-size:9px!important;padding:8px 10px!important}
+  .p8-hero-copy h1{font-size:clamp(46px,13vw,58px)!important;line-height:1.04!important;letter-spacing:-.045em!important;margin:18px 0 22px!important}
+  .p8-hero-copy>p{font-size:15px!important;line-height:1.65!important;margin:0!important}
+  .p8-hero-actions,.p8-mini-proof{justify-content:flex-start!important}
+  .p8-hero-actions{gap:16px!important;margin-top:26px!important}
+  .play-store-badge{width:168px!important;height:50px!important}
+  .p8-mini-proof{row-gap:9px!important}
+  .p8-hero-product{min-height:470px!important;margin-top:10px}
+  .p8-phone-main .android-phone{width:258px!important}
+  .p8-caption{padding:9px 10px!important;border-radius:13px!important}
+  .p8-caption b{font-size:9px!important}.p8-caption small{font-size:8px!important}
+  .p8-caption.top{left:0!important;top:31%!important}.p8-caption.bottom{right:0!important;bottom:18%!important}
+  .p8-valuebar-grid>div{padding:20px 4px!important}
+  .p8-story,.p8-payment,.p8-context,.p8-trust,.p8-download{padding:72px 0!important}
+  .p8-story-copy h2,.p8-payment h2,.p8-context h2,.p8-trust h2,.p8-download h2{font-size:clamp(36px,10.5vw,44px)!important;line-height:1.08!important;letter-spacing:-.04em!important}
+  .p8-story-copy>p,.p8-context-head>p,.p8-payment-copy>p,.p8-trust-copy>p,.p8-download-copy p{font-size:14px!important;line-height:1.68!important}
+  .p8-story-product{min-height:500px!important}.p8-phone-scan .android-phone{width:255px!important}
+  .p8-payment-product{min-height:510px!important}.p8-phone-pay .android-phone{width:235px!important}.p8-code-card{right:0!important;bottom:15%!important;min-width:145px!important;padding:12px 13px!important}.p8-code-card strong{font-size:22px!important}
+  .p8-context-stage{height:520px!important;border-radius:24px!important}
+  .p8-context-stage .android-phone{width:168px!important}
+  .p8-profile{left:4%!important;top:56px!important;transform:rotate(-5deg)!important}
+  .p8-settings{right:4%!important;top:95px!important;transform:rotate(4deg)!important}
+  .p8-context-card{display:none!important}
+  .p8-trust-grid{gap:34px!important}.p8-trust-points article{grid-template-columns:42px 1fr!important;padding:20px 0!important}
+  .p8-download-card{padding:38px 22px 0!important;border-radius:24px!important;min-height:520px!important}.p8-download-product{min-height:350px!important}.p8-download-product .android-phone{width:220px!important}.p8-download-product .p8-phone{transform:translateY(58px) rotate(2deg)!important}
+  .pagehero{padding:90px 0 66px!important}.pagehero .h1{font-size:clamp(40px,11vw,52px)!important;line-height:1.08!important}.pagehero .lead{font-size:15px!important;line-height:1.65!important}
+  .cookie-wrap{left:8px!important;right:8px!important;bottom:8px!important}.cookie{grid-template-columns:1fr!important;padding:13px!important;gap:11px!important}.cookie-actions{display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important}.cookie-actions .btn{min-height:36px!important}.cookie-manage{padding-left:4px}
+}
+
+@media(max-width:420px){
+  .p8-hero-copy h1{font-size:44px!important}
+  .p8-caption.top{left:-4px!important}.p8-caption.bottom{right:-4px!important}
+  .p8-phone-main .android-phone{width:240px!important}
+  .p8-context-stage{height:485px!important}.p8-context-stage .android-phone{width:151px!important}
+  .p8-profile{left:3%!important}.p8-settings{right:3%!important}
+}
+
+/* Inner-page contrast and component QA */
+.pagecard .lead,.band .lead{color:var(--np-copy)!important}
+.pagecard p,.band p,.legal p,.legal li{font-family:var(--np-font)!important;color:var(--np-copy)!important;line-height:1.68!important}
+.pagecard{padding:30px!important;min-height:218px!important;box-shadow:0 10px 28px rgba(25,45,75,.045)!important;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.pagecard:hover{transform:translateY(-2px)!important;box-shadow:0 15px 36px rgba(25,45,75,.075)!important;border-color:#d7dce3!important}
+.feature-number{font-family:var(--np-font)!important;font-weight:700!important;letter-spacing:.08em;font-size:11px}
+.pagegrid{gap:18px!important}
+.band{padding:36px!important;border-radius:24px!important;background:#edf3ff!important;border-color:#d6e3f8!important}.band .eyebrow{font-family:var(--np-font)!important;font-weight:700!important}.band .h3{margin-top:12px}
+.legal{max-width:790px!important}.legal h2{font-family:var(--np-font)!important;font-size:25px;line-height:1.2;letter-spacing:-.025em;font-weight:700;margin:40px 0 10px}.legal p{font-size:14px;margin-top:0}.notice{font-family:var(--np-font)!important;font-size:12px!important;line-height:1.6!important;padding:17px 18px!important;border-radius:14px!important}
+.support-search{font-family:var(--np-font)!important;font-size:14px!important;padding:16px 18px!important;border-radius:14px!important;box-shadow:0 7px 22px rgba(25,45,75,.035)}.support-search::placeholder{color:#8b95a2}.support-search:focus{border-color:#8eb5ff!important;box-shadow:0 0 0 4px rgba(23,107,255,.10)!important}
+.form{max-width:680px!important}.field{gap:8px!important}.field label{font-family:var(--np-font)!important;font-size:12px!important;font-weight:600!important}.field input,.field textarea,.field select{font-family:var(--np-font)!important;border-radius:12px!important;padding:13px 14px!important;outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:#8eb5ff!important;box-shadow:0 0 0 4px rgba(23,107,255,.09)!important}.field textarea{min-height:150px!important}
+.card .status-row{border-color:#e5e8ec!important}.card .status-row span{color:#627083!important}.card .status-row b{color:var(--np-ink)!important}
+
+@media(max-width:720px){
+  .pagecard{padding:24px!important;min-height:0!important}.band{padding:26px!important;border-radius:20px!important}.legal h2{font-size:22px}.legal p{font-size:13px}.form{max-width:none!important}
+}

@@ -1,4 +1,8 @@
-# NaviParka Website
+# NaviParka Website — Stage 9
+
+Production-oriented Next.js marketing website for NaviParka. Stage 9 adds the app-matched typography and a full spacing/visual QA pass.
+
+See `STAGE-9-TYPOGRAPHY-QA.md` for the changes in this build.
 
 Production-oriented marketing website for NaviParka, built with Next.js, TypeScript and Tailwind CSS.
 

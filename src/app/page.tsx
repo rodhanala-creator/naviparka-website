@@ -7,7 +7,7 @@ export default function Home(){return <>
   <div className="container p8-hero-grid">
     <div className="p8-hero-copy">
       <div className="p8-pill"><Sparkles size={14}/> AI-assisted UK parking guidance</div>
-      <h1>Read the sign.<br/><em>Know what to do.</em></h1>
+      <h1><span>Read the sign.</span><em>Know what to do.</em></h1>
       <p>Point your phone at parking signs or road markings. NaviParka turns the visible rules into clear guidance, shows payment details when available and helps you keep track of time limits.</p>
       <div className="p8-hero-actions">
         <PlayStoreBadge/>
