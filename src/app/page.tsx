@@ -1,108 +1,276 @@
 import Link from "next/link";
-import {ArrowRight,ScanLine,BrainCircuit,ExternalLink,CreditCard,Clock3,BellRing,Car,BadgeCheck,History,ShieldCheck,CheckCircle2,Copy,Camera,Sparkles} from "lucide-react";
-import {PhoneMockup,PlayStoreBadge} from "@/components/site";
+import {
+  ArrowRight,
+  Sparkles,
+  ScanLine,
+  BrainCircuit,
+  CreditCard,
+  BellRing,
+  Car,
+  BadgeCheck,
+  ShieldCheck,
+  CheckCircle2,
+  ExternalLink,
+  Clock3,
+} from "lucide-react";
+import { PhoneMockup, PlayStoreBadge } from "@/components/site";
+import { FaqAccordion, ResultShowcase } from "@/components/home-interactive";
 
-export default function Home(){return <>
-<section className="p8-hero">
-  <div className="container p8-hero-grid">
-    <div className="p8-hero-copy">
-      <div className="p8-pill"><Sparkles size={14}/> AI-assisted UK parking guidance</div>
-      <h1><span>Read the sign.</span><em>Know what to do.</em></h1>
-      <p>Point your phone at parking signs or road markings. NaviParka turns the visible rules into clear guidance, shows payment details when available and helps you keep track of time limits.</p>
-      <div className="p8-hero-actions">
-        <PlayStoreBadge/>
-        <Link href="/how-it-works" className="p8-link">See how it works <ArrowRight size={18}/></Link>
-      </div>
-      <div className="p8-mini-proof">
-        <span><CheckCircle2 size={16}/> Android first</span>
-        <span><ShieldCheck size={16}/> Safety-conscious</span>
-        <span><CreditCard size={16}/> Payment handoff</span>
-      </div>
-    </div>
-    <div className="p8-hero-product">
-      <div className="p8-phone p8-phone-main"><PhoneMockup kind="scanner"/></div>
-      <div className="p8-caption top"><ScanLine size={17}/><div><b>Scan parking evidence</b><small>Signs or road markings</small></div></div>
-      <div className="p8-caption bottom"><BrainCircuit size={17}/><div><b>Plain-English guidance</b><small>Important conditions first</small></div></div>
-    </div>
-  </div>
-</section>
+const benefitCards = [
+  {
+    icon: ScanLine,
+    title: "Scan signs and markings",
+    text: "Use one scanner flow for parking signs, road markings and the visible evidence around them.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "Understand the restriction",
+    text: "Turn hard-to-read parking language into clearer guidance before you leave the car.",
+  },
+  {
+    icon: CreditCard,
+    title: "Handle payment faster",
+    text: "See supported payment information, location codes and direct handoff actions when available.",
+  },
+] as const;
 
-<section className="p8-valuebar">
-  <div className="container p8-valuebar-grid">
-    <div><span>01</span><b>Scan</b><small>Point your camera at the evidence.</small></div>
-    <div><span>02</span><b>Understand</b><small>See the restriction in plain English.</small></div>
-    <div><span>03</span><b>Act</b><small>Pay externally or track the time limit.</small></div>
-  </div>
-</section>
+const flowItems = [
+  {
+    number: "01",
+    title: "Scan",
+    text: "Point your camera at the sign, road marking or bay evidence. There is no scan-type toggle to choose first.",
+  },
+  {
+    number: "02",
+    title: "Understand",
+    text: "NaviParka reads the visible rules, surfaces the important conditions and puts them into simpler language.",
+  },
+  {
+    number: "03",
+    title: "Take the next step",
+    text: "Pay externally, keep track of time limits or use the result to decide whether it is safe to park.",
+  },
+] as const;
 
-<section className="p8-story p8-story-white">
-  <div className="container p8-story-grid">
-    <div className="p8-story-product left">
-      <div className="p8-phone p8-phone-scan"><PhoneMockup kind="scanner"/></div>
-    </div>
-    <div className="p8-story-copy">
-      <span className="p8-eyebrow">AI parking scanner</span>
-      <h2>One camera.<br/><em>No scan mode to choose.</em></h2>
-      <p>NaviParka is designed to recognise parking signs and road markings from the same scanner. Keep the relevant evidence in frame and let the app work out what it is looking at.</p>
-      <div className="p8-inline-features">
-        <span><Camera size={18}/> Parking signs</span><span><ScanLine size={18}/> Road markings</span><span><Clock3 size={18}/> Time limits</span><span><CreditCard size={18}/> Paid parking</span>
-      </div>
-      <Link href="/parking-scanner" className="p8-link">Explore the scanner <ArrowRight size={18}/></Link>
-    </div>
-  </div>
-</section>
+const trustItems = [
+  {
+    icon: ShieldCheck,
+    title: "Helpful AI, not fake certainty",
+    text: "NaviParka is designed to support the decision, not replace checking the real-world sign and surroundings.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Useful context when it matters",
+    text: "Vehicle details, Blue Badge mode and scan history help keep important parking context close by.",
+  },
+  {
+    icon: BellRing,
+    title: "Built for the next action",
+    text: "When a timer or payment step matters, the product is focused on helping you move forward quickly.",
+  },
+] as const;
 
-<section className="p8-payment">
-  <div className="container p8-payment-grid">
-    <div className="p8-payment-copy">
-      <span className="p8-eyebrow light">When payment is required</span>
-      <h2>Don’t hunt for the payment details.</h2>
-      <p>When NaviParka can identify supported payment information, the result can surface the provider and location code and give you a direct action to open the relevant external payment service.</p>
-      <div className="p8-payment-list">
-        <div><CreditCard size={22}/><span><b>Payment provider</b><small>See the service clearly in the result.</small></span></div>
-        <div><Copy size={22}/><span><b>Location code</b><small>Copy the code without re-reading the sign.</small></span></div>
-        <div><ExternalLink size={22}/><span><b>Open payment service</b><small>Continue securely outside NaviParka.</small></span></div>
-      </div>
-    </div>
-    <div className="p8-payment-product">
-      <div className="p8-phone p8-phone-pay"><PhoneMockup kind="payment"/></div>
-      <div className="p8-code-card"><small>LOCATION CODE</small><strong>686995</strong><span>Ready to copy</span></div>
-    </div>
-  </div>
-</section>
+export default function Home() {
+  return (
+    <>
+      <section className="s11-hero" id="top">
+        <div className="container s11-shell">
+          <div className="s11-hero-panel">
+            <div className="s11-hero-copy">
+              <div className="s11-eyebrow"><Sparkles size={14} /> AI-assisted UK parking guidance</div>
+              <h1>Parking rules, made simple.</h1>
+              <p>
+                Scan a UK parking sign or road marking. NaviParka helps you understand the visible restriction,
+                find supported payment details when available and take the right next step.
+              </p>
+              <div className="s11-hero-actions">
+                <PlayStoreBadge href="/#download" />
+                <Link href="#how-it-works" className="btn btn-secondary">See how it works <ArrowRight size={16} /></Link>
+              </div>
+              <div className="s11-hero-notes">
+                <span><CheckCircle2 size={15} /> Android first</span>
+                <span><ShieldCheck size={15} /> Safety-conscious guidance</span>
+                <span><ExternalLink size={15} /> Direct payment handoff</span>
+              </div>
+            </div>
 
-<section className="p8-context">
-  <div className="container">
-    <div className="p8-context-head">
-      <div><span className="p8-eyebrow">Built around the driver</span><h2>More useful when the situation depends on you.</h2></div>
-      <p>Vehicle details, Blue Badge mode, move-car reminders and scan history help NaviParka keep useful parking context close at hand.</p>
-    </div>
-    <div className="p8-context-stage">
-      <div className="p8-phone p8-profile"><PhoneMockup kind="vehicle"/></div>
-      <div className="p8-phone p8-settings"><PhoneMockup kind="settings"/></div>
-      <div className="p8-context-card one"><Car size={20}/><b>Vehicle context</b><small>Keep relevant vehicle information available.</small></div>
-      <div className="p8-context-card two"><BadgeCheck size={20}/><b>Blue Badge mode</b><small>Apply Blue Badge context when relevant.</small></div>
-      <div className="p8-context-card three"><BellRing size={20}/><b>Move-car reminders</b><small>Get prompted before time runs out.</small></div>
-      <div className="p8-context-card four"><History size={20}/><b>Scan history</b><small>Return to previous parking checks.</small></div>
-    </div>
-  </div>
-</section>
+            <div className="s11-hero-stage">
+              <div className="s11-stage-backdrop" />
+              <div className="s11-stage-card s11-stage-left"><ScanLine size={18} /><div><b>Scan once</b><small>Signs or road markings</small></div></div>
+              <div className="s11-stage-card s11-stage-right"><CreditCard size={18} /><div><b>Payment found</b><small>Open the service directly</small></div></div>
+              <div className="s11-stage-card s11-stage-bottom"><BrainCircuit size={18} /><div><b>Rules simplified</b><small>Plain-English guidance</small></div></div>
+              <div className="s11-phone-hero"><PhoneMockup kind="scanner" /></div>
+            </div>
+          </div>
 
-<section className="p8-trust">
-  <div className="container p8-trust-grid">
-    <div className="p8-trust-copy"><span className="p8-eyebrow light">Safety matters</span><h2>Helpful AI.<br/>No fake certainty.</h2><p>NaviParka is designed to make parking rules easier to understand, but physical signage, temporary restrictions and local conditions still matter.</p><Link href="/safety" className="p8-link light">How NaviParka handles safety <ArrowRight size={18}/></Link></div>
-    <div className="p8-trust-points">
-      <article><span>01</span><h3>Evidence first</h3><p>Guidance is based on the parking evidence available to the app.</p></article>
-      <article><span>02</span><h3>Conditions surfaced</h3><p>Time limits, permits, payment and other important conditions are prioritised.</p></article>
-      <article><span>03</span><h3>Driver stays in control</h3><p>Always check the physical signs and surroundings before leaving your vehicle.</p></article>
-    </div>
-  </div>
-</section>
+          <div className="s11-benefit-strip">
+            {benefitCards.map(({ icon: Icon, title, text }) => (
+              <article key={title} className="s11-benefit-card">
+                <div className="s11-benefit-icon"><Icon size={20} /></div>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-<section className="p8-download">
-  <div className="container p8-download-card">
-    <div className="p8-download-copy"><span className="p8-eyebrow">NaviParka for Android</span><h2>Parking rules,<br/>made simple.</h2><p>Scan the evidence. Understand the restriction. Take the next step.</p><PlayStoreBadge/><small>Connect this button to your live Google Play listing when the release is published.</small></div>
-    <div className="p8-download-product"><div className="p8-phone"><PhoneMockup kind="onboarding"/></div></div>
-  </div>
-</section>
-</>}
+      <section className="s11-section" id="product">
+        <div className="container s11-grid-feature">
+          <div className="s11-copy-block">
+            <span className="s11-kicker">The solution to confusing parking rules</span>
+            <h2>Built for those few important minutes before you leave the vehicle.</h2>
+            <p>
+              NaviParka is not trying to be a giant parking portal. The current MVP is focused on one job: helping
+              you read the evidence in front of you, understand the restriction and move forward with more confidence.
+            </p>
+            <ul className="s11-check-list">
+              <li><CheckCircle2 size={18} /> Scan signs, road markings and bay context</li>
+              <li><CheckCircle2 size={18} /> Surface time limits, permit rules and payment cues</li>
+              <li><CheckCircle2 size={18} /> Support Blue Badge mode, reminders and scan history</li>
+            </ul>
+          </div>
+
+          <div className="s11-feature-stage">
+            <article className="s11-panel-card s11-panel-light">
+              <div className="s11-panel-text">
+                <span className="s11-card-kicker">Android product</span>
+                <h3>A real app experience, not a brochure site.</h3>
+                <p>Every section is grounded in the screens users actually see in the product today.</p>
+              </div>
+              <div className="s11-panel-phone"><PhoneMockup kind="onboarding" /></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="s11-section s11-how" id="how-it-works">
+        <div className="container">
+          <div className="s11-section-head centered">
+            <span className="s11-kicker">How it works</span>
+            <h2>One short flow from evidence to action.</h2>
+            <p>The website stays simple because the product flow is simple.</p>
+          </div>
+
+          <div className="s11-flow-grid">
+            {flowItems.map((item) => (
+              <article key={item.number} className="s11-flow-card">
+                <span>{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="s11-section s11-section-alt" id="results">
+        <div className="container">
+          <div className="s11-section-head">
+            <span className="s11-kicker">Product interaction</span>
+            <h2>A straight answer when the sign is not straightforward.</h2>
+            <p>Use the controls below to explore the different kinds of guidance the product can help surface.</p>
+          </div>
+          <ResultShowcase />
+        </div>
+      </section>
+
+      <section className="s11-section" id="supporting-features">
+        <div className="container s11-duo-grid">
+          <article className="s11-highlight-card s11-highlight-blue">
+            <div className="s11-highlight-copy">
+              <span className="s11-card-kicker light">When payment is required</span>
+              <h3>Don’t hunt for the payment details.</h3>
+              <p>
+                Supported payment results can show the provider, the location code and a direct action to open the
+                relevant external service.
+              </p>
+              <ul>
+                <li><CreditCard size={16} /> Payment provider surfaced clearly</li>
+                <li><ExternalLink size={16} /> Direct external payment handoff</li>
+                <li><Clock3 size={16} /> Keep the next step moving</li>
+              </ul>
+            </div>
+            <div className="s11-highlight-phone"><PhoneMockup kind="payment" /></div>
+          </article>
+
+          <article className="s11-highlight-card s11-highlight-neutral">
+            <div className="s11-highlight-copy">
+              <span className="s11-card-kicker">Driver context</span>
+              <h3>Useful before and after the scan.</h3>
+              <p>
+                Add your vehicle, enable Blue Badge mode when relevant and keep scan history close by for the next
+                parking decision.
+              </p>
+              <ul>
+                <li><Car size={16} /> Vehicle details for future scans</li>
+                <li><BadgeCheck size={16} /> Blue Badge mode when relevant</li>
+                <li><BellRing size={16} /> Move-car reminders and history</li>
+              </ul>
+            </div>
+            <div className="s11-double-phone">
+              <div className="s11-phone-left"><PhoneMockup kind="vehicle" /></div>
+              <div className="s11-phone-right"><PhoneMockup kind="settings" /></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="s11-section s11-safety" id="safety">
+        <div className="container s11-safety-grid">
+          <div className="s11-safety-copy">
+            <span className="s11-kicker">Safety and trust</span>
+            <h2>Clear enough to be helpful. Honest enough to be trusted.</h2>
+            <p>
+              NaviParka should feel like a reliable product. That means showing useful guidance clearly, while also
+              being honest about the fact that real-world signs and local conditions still matter.
+            </p>
+            <div className="s11-trust-list">
+              {trustItems.map(({ icon: Icon, title, text }) => (
+                <article key={title}>
+                  <Icon size={18} />
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="s11-faq-card" id="faq">
+            <div className="s11-faq-head">
+              <span className="s11-kicker">FAQ</span>
+              <h2>Short answers to the main questions.</h2>
+            </div>
+            <FaqAccordion />
+          </div>
+        </div>
+      </section>
+
+      <section className="s11-section s11-download" id="download">
+        <div className="container">
+          <div className="s11-download-panel">
+            <div className="s11-download-copy">
+              <span className="s11-card-kicker light">Get NaviParka</span>
+              <h2>Download the Android app and try the current MVP.</h2>
+              <p>
+                Scan the evidence. Understand the restriction. Take the next step with a cleaner, more product-led
+                experience.
+              </p>
+              <div className="s11-download-actions">
+                <PlayStoreBadge href="/download" />
+                <Link href="/support" className="btn btn-secondary">Need support? <ArrowRight size={16} /></Link>
+              </div>
+            </div>
+            <div className="s11-download-visual">
+              <PhoneMockup kind="onboarding" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

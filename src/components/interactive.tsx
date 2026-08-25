@@ -8,14 +8,12 @@ export function MobileMenu(){
   return <div className="mobile-menu">
     <button className="menu-button" onClick={()=>setOpen(!open)} aria-label={open?"Close menu":"Open menu"} aria-expanded={open}>{open?<X/>:<Menu/>}</button>
     {open&&<div className="mobile-drawer">
-      <Link onClick={()=>setOpen(false)} href="/features">Product</Link>
-      <Link onClick={()=>setOpen(false)} href="/how-it-works">How it works</Link>
-      <Link onClick={()=>setOpen(false)} href="/parking-scanner">AI Parking Scanner</Link>
-      <Link onClick={()=>setOpen(false)} href="/vehicle-awareness">Driver Context</Link>
-      <Link onClick={()=>setOpen(false)} href="/features">Payment & Timer</Link>
-      <Link onClick={()=>setOpen(false)} href="/safety">Safety</Link>
+      <Link onClick={()=>setOpen(false)} href="/#product">Product</Link>
+      <Link onClick={()=>setOpen(false)} href="/#how-it-works">How it works</Link>
+      <Link onClick={()=>setOpen(false)} href="/#safety">Safety</Link>
+      <Link onClick={()=>setOpen(false)} href="/#faq">FAQ</Link>
       <Link onClick={()=>setOpen(false)} href="/support">Support</Link>
-      <Link onClick={()=>setOpen(false)} href="/download" className="btn btn-primary">Get NaviParka</Link>
+      <Link onClick={()=>setOpen(false)} href="/#download" className="btn btn-primary">Get NaviParka</Link>
     </div>}
   </div>
 }
