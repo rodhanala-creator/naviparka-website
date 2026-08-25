@@ -86,7 +86,7 @@ export function ResultShowcase() {
 const faqItems = [
   {
     q: "What can NaviParka scan right now?",
-    a: "The current MVP is designed around parking signs, road markings and related visible parking evidence in the frame.",
+    a: "NaviParka is designed around parking signs, road markings and related visible parking evidence in the frame.",
   },
   {
     q: "Can NaviParka show payment details?",

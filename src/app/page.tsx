@@ -123,7 +123,7 @@ export default function Home() {
             <span className="s11-kicker">The solution to confusing parking rules</span>
             <h2>Built for those few important minutes before you leave the vehicle.</h2>
             <p>
-              NaviParka is not trying to be a giant parking portal. The current MVP is focused on one job: helping
+              NaviParka is not trying to be a giant parking portal. The current NaviParka experience is focused on one job: helping
               you read the evidence in front of you, understand the restriction and move forward with more confidence.
             </p>
             <ul className="s11-check-list">
@@ -255,7 +255,7 @@ export default function Home() {
           <div className="s11-download-panel">
             <div className="s11-download-copy">
               <span className="s11-card-kicker light">Get NaviParka</span>
-              <h2>Download the Android app and try the current MVP.</h2>
+              <h2>Download NaviParka for Android.</h2>
               <p>
                 Scan the evidence. Understand the restriction. Take the next step with a cleaner, more product-led
                 experience.
